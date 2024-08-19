@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Meet to PDF</title>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    body {
+      font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+      color: #333;
+
+      margin: 40px auto;
+      max-width: 45em;
+      line-height: 1.6;
+      font-size: 1.1em;
+      padding: 0 2%;
+      letter-spacing: 0.01em;
+    }
+
+    h1, h2, h3 {
+      color: #111;
+      line-height: 1.2
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1em;
+    }
+
+    #screen_share_controls {
+      background: #f5f7f9;
+      padding: 1em 2em;
+    }
+
+    #title {
+      padding: 0.5em 0.5em;
+    }
+
+    #metrics_box{
+      width:200px;
+    }
+    .bar_outer {
+      height: 200px;
+      width:30%;
+      background-color:darkgray;
+      display:inline-block;
+    }
+
+    .bar_inner {
+      height:20%;
+      margin-bottom: 0;
+      background-color:red;
+    }
+  </style>
+
+  <script src="main.js"></script>
+</head>
+
+<body>
+
+<div id="output">
+  <h1 contenteditable="true" id="title">My PDF Title, Click to Edit</h1>
+</div>
+
+<div id="screen_share_controls" style="position:relative;">
+  <div id="metrics_box" style="position: absolute; right:0;top:0;padding:5px;">
+    <ul>
+      <li id="diff_LSE">NULL</li>
+      <li id="diff_foo">100</li>
+      <div class="bar_outer"><div class="bar_inner" id="bar_1"></div></div>
+      <div class="bar_outer"><div class="bar_inner" id="bar_2"></div></div>
+      <div class="bar_outer"><div class="bar_inner" id="bar_3"></div></div>
+    </ul>
+  </div>
+  <h1>Convert Application to PDF</h1>
+
+  <p>Instructions: Lorem Ipsum</p>
+
+  <button id="start_button">start</button>
+  <br/>
+
+  <video id="video">Video stream not available.</video>
+  <br/>
+
+  <canvas id="canvas" style="display: None;"></canvas>
+
+  <button id="click_button">Take photo</button>
+  <button id="auto_click">Toggle Auto click</button> <!-- TODO: indicator -->
+  <button id="discard_similar_slides">Toggle discard similar slides</button> <!-- TODO: indicator -->
+  <button id="stop_button">Stop screen sharing</button>
+  <p><span id="auto_click_status">OFF</span> : every <span id="auto_click_interval">500</span> ms.</p>
+  <br/>
+
+  <p>
+    Middle click screenshots to delete,
+    after clicking 'Stop Screen Sharing', change the title and use control P to print
+  </p>
+</div>
+
+</body>
+</html>
+
